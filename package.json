@@ -1,0 +1,20 @@
+{
+  "name": "grindery-zapier-safe",
+  "version": "1.0.0",
+  "description": "Safe by Grindery zapier integration",
+  "repository": "grindery-io/grindery-zapeir-safe",
+  "homepage": "https://www.grindery.io/",
+  "author": "Egor Miliukov <milukove@gmail.com>",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --testTimeout 10000"
+  },
+  "dependencies": {
+    "grindery-nexus-client": "^1.0.2",
+    "zapier-platform-core": "12.0.3"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}
