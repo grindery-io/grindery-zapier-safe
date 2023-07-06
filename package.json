@@ -2,7 +2,7 @@
   "name": "grindery-zapier-safe",
   "version": "1.0.0",
   "description": "Safe by Grindery zapier integration",
-  "repository": "grindery-io/grindery-zapeir-safe",
+  "repository": "grindery-io/grindery-zapier-safe",
   "homepage": "https://www.grindery.io/",
   "author": "Egor Miliukov <milukove@gmail.com>",
   "license": "MIT",
