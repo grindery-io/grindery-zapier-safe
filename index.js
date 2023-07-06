@@ -1,10 +1,5 @@
-// Safe actions
-const gnosisSafeSimpleTransfer = require("./creates/gnosisSafeSimpleTransfer");
-
-// Safe triggers
-const safeTransactionExecutedTransferNative = require("./triggers/safeTransactionExecutedTransferNative");
-
-// Authentication
+const cds = require("./cds");
+const { getAppDefinitionFromCDS } = require("./utils");
 const {
   config: authentication,
   befores = [],
@@ -13,6 +8,9 @@ const {
 
 // Chains list
 const listChainsHidden = require("./triggers/listChainsHidden");
+
+// Convert CDS to Zapier triggers and actions
+const appOperations = getAppDefinitionFromCDS(cds);
 
 const App = {
   version: require("./package.json").version,
@@ -23,13 +21,10 @@ const App = {
   resources: {},
   triggers: {
     [listChainsHidden.key]: listChainsHidden,
-    [safeTransactionExecutedTransferNative.key]:
-      safeTransactionExecutedTransferNative,
+    ...appOperations.triggers,
   },
   searches: {},
-  creates: {
-    [gnosisSafeSimpleTransfer.key]: gnosisSafeSimpleTransfer,
-  },
+  creates: appOperations.actions,
 };
 
 module.exports = App;
